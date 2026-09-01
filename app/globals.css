@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+    --font-display: var(--font-manrope), system-ui, sans-serif;
+    --font-mono: var(--font-jetbrains-mono), monospace;
+    --background: #0A0A0A;
+    --surface-elevated: #171717;
+    --on-surface: #e5e2e1;
+    --on-surface-variant: #c4c7c8;
+    --accent-blue: #3B82F6;
+    --accent-violet: #8B5CF6;
+    --accent-pink: #D946EF;
+    --border-translucent: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0A0A0A;
+    color: #e5e2e1;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #e5e2e1;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tech {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Background Texture */
+.grid-texture {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Atmospheric Glows matching reference2.html */
+.atmospheric-glow-1 {
+  background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+  filter: blur(80px);
+}
+
+.atmospheric-glow-2 {
+  background: radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
+  filter: blur(80px);
+}
+
+/* Glass Panels matching reference2.html */
+.glass-panel {
+  background-color: #171717;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background-color: #1f1f1f;
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+}
+
+.nav-glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Animated Gradient Text matching reference2.html */
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #c4c7c8, #3B82F6, #ffffff);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 8s linear infinite;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 300% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-container {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
