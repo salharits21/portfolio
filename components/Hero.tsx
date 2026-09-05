@@ -96,7 +96,7 @@ export default function Hero() {
                 {/* Profile Picture */}
                 <div className="relative w-full h-full flex items-center justify-center p-1.5 sm:p-2">
                   <Image
-                    src="./images/profile.png"
+                    src="https://salharits.me/Untitled%20design%20(1)-Photoroom%20(1).png"
                     alt="Faishal Harits Al Fajri"
                     width={400}
                     height={400}
