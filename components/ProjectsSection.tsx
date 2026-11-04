@@ -1,7 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, X, UserCheck, Calendar, CheckCircle, Image as ImageIcon } from "lucide-react";
+import {
+  ArrowUpRight,
+  X,
+  UserCheck,
+  Calendar,
+  CheckCircle,
+  Image as ImageIcon,
+  Globe,
+  SquareArrowOutUpRight,
+} from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 interface ProjectItem {
@@ -12,6 +21,8 @@ interface ProjectItem {
   timeline: string;
   description: string;
   image?: string;
+  repoUrl?: string;
+  webUrl?: string;
   additionalContext?: string;
   contributions?: string[];
   tech: string[];
@@ -42,6 +53,36 @@ export default function ProjectsSection() {
       tech: ["Laravel", "MySQL", "RESTful API", "Xendit", "Antigravity"],
       accentColor: "#D97706",
       bgGradient: "from-[#D97706]/15 via-transparent to-transparent",
+      repoUrl: "https://github.com/salharits21/backend_diagram_coffee_jwt.git",
+      webUrl: "https://diagram-coffee-puce.vercel.app/",
+    },
+    {
+      id: "fariza-house",
+      label: "DESKTOP APPLICATION",
+      title: "Fariza House Management System",
+      role: "Fullstack Developer",
+      timeline: "October 2026",
+      image: "https://assets.salharits.me/1000114107.jpg.jpeg",
+      description:
+        "A Wails3 desktop application for hotel management at Fariza House in Kendal, Central Java, built with Go, React, and SQLite.",
+      tech: ["Go", "React", "SQLite", "Wails3"],
+      accentColor: "#6366F1",
+      bgGradient: "from-[#6366F1]/15 via-transparent to-transparent",
+      repoUrl: "https://github.com/salharits21/fariza-house.git",
+    },
+    {
+      id: "fariza-mart",
+      label: "DESKTOP APPLICATION",
+      title: "Fariza Mart POS",
+      role: "Fullstack Developer",
+      timeline: "October 2026",
+      image: "https://assets.salharits.me/1000114103.jpg.jpeg",
+      description:
+        "A Wails3 point-of-sale desktop application for Fariza Mart, a grocery store in Kendal, Central Java, built with Go, React, and SQLite.",
+      tech: ["Go", "React", "SQLite", "Wails3"],
+      accentColor: "#14B8A6",
+      bgGradient: "from-[#14B8A6]/15 via-transparent to-transparent",
+      repoUrl: "https://github.com/salharits21/fariza-mart.git",
     },
     {
       id: "netlyzer",
@@ -62,6 +103,7 @@ export default function ProjectsSection() {
       tech: ["React", "Laravel", "PostgreSQL", "RESTful API"],
       accentColor: "#3B82F6",
       bgGradient: "from-[#3B82F6]/15 via-transparent to-transparent",
+      repoUrl: "https://github.com/salharits21/Network_Anomaly_Detection_Laravel",
     },
     {
       id: "cleanquest",
@@ -80,6 +122,7 @@ export default function ProjectsSection() {
       tech: ["Flutter", "Laravel", "RESTful API", "MySQL"],
       accentColor: "#10B981",
       bgGradient: "from-[#10B981]/15 via-transparent to-transparent",
+      repoUrl: "https://github.com/yudha490/Flutter_cleanquest.git",
     },
   ];
 
@@ -182,6 +225,7 @@ export default function ProjectsSection() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedProject(null)}
+              aria-label="Close project details"
               className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/15 text-[#c4c7c8] hover:text-white transition-colors z-20"
             >
               <X className="w-5 h-5" />
@@ -311,13 +355,29 @@ export default function ProjectsSection() {
             </div>
 
             {/* Modal Footer Action */}
-            <div className="pt-4 border-t border-white/10 flex justify-end">
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="bg-white/10 hover:bg-white/20 text-white font-sans text-xs font-semibold px-6 py-2.5 rounded-xl transition-colors"
-              >
-                Close Case Study
-              </button>
+            <div className="pt-4 border-t border-white/10 flex flex-wrap justify-end gap-3">
+              {selectedProject.webUrl && (
+                <a
+                  href={selectedProject.webUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-sans text-xs font-semibold px-6 py-2.5 rounded-xl transition-colors"
+                >
+                  <Globe className="w-4 h-4" />
+                  Visit Web
+                </a>
+              )}
+              {selectedProject.repoUrl && (
+                <a
+                  href={selectedProject.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-sans text-xs font-semibold px-6 py-2.5 rounded-xl transition-colors"
+                >
+                  <SquareArrowOutUpRight className="w-4 h-4" />
+                  View Project
+                </a>
+              )}
             </div>
 
           </div>
