@@ -27,7 +27,7 @@ export default function ContactSection() {
   const phone = "+62 813-8534-6095";
   const linkedin = "https://www.linkedin.com/in/faishal-harits-al-fajri-2b146b250/";
   const github = "https://github.com/salharits21";
-  const location = "Bandung, West Java, Indonesia";
+  const location = "Kendal, Central Java, Indonesia";
 
   const copyToClipboard = (text: string, type: "email" | "phone") => {
     navigator.clipboard.writeText(text);
