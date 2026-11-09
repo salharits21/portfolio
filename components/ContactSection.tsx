@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Copy, Check, Send, ArrowUp, ExternalLink } from "lucide-react";
+import GitHubIcon from "@/components/GitHubIcon";
 import ScrollReveal from "@/components/ScrollReveal";
 
 function LinkedInIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -25,6 +26,7 @@ export default function ContactSection() {
   const email = "faishalfajri.h@gmail.com";
   const phone = "+62 813-8534-6095";
   const linkedin = "https://www.linkedin.com/in/faishal-harits-al-fajri-2b146b250/";
+  const github = "https://github.com/salharits21";
   const location = "Bandung, West Java, Indonesia";
 
   const copyToClipboard = (text: string, type: "email" | "phone") => {
@@ -93,6 +95,22 @@ export default function ContactSection() {
                 </div>
               </a>
 
+              {/* GitHub */}
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center justify-between group hover:border-white/30 hover:bg-white/10 transition-colors"
+              >
+                <div className="overflow-hidden">
+                  <span className="font-mono-tech text-[10px] text-[#8e9192] uppercase block mb-0.5">GITHUB</span>
+                  <span className="font-mono-tech text-xs text-white font-medium truncate block">salharits21</span>
+                </div>
+                <div className="p-1.5 rounded bg-white/10 text-white group-hover:bg-white group-hover:text-black transition-colors shrink-0 ml-2">
+                  <GitHubIcon className="w-4 h-4" />
+                </div>
+              </a>
+
               {/* Phone */}
               <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center justify-between group hover:border-[#8B5CF6]/50 transition-colors">
                 <div>
@@ -109,7 +127,7 @@ export default function ContactSection() {
               </div>
 
               {/* Location */}
-              <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center gap-2">
+              <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center gap-2 sm:col-span-2">
                 <div>
                   <span className="font-mono-tech text-[10px] text-[#8e9192] uppercase block mb-0.5">LOCATION</span>
                   <span className="font-mono-tech text-xs text-white font-medium block">{location}</span>
@@ -138,6 +156,16 @@ export default function ContactSection() {
                 <span>LinkedIn Profile</span>
               </a>
 
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-sm rounded-xl px-6 py-3 transition-all transform hover:-translate-y-0.5"
+              >
+                <GitHubIcon className="w-4 h-4" />
+                <span>GitHub Profile</span>
+              </a>
+
               <button
                 onClick={scrollToTop}
                 className="inline-flex items-center gap-2 glass-panel hover:bg-white/10 text-[#c4c7c8] hover:text-white font-sans font-semibold text-sm rounded-xl px-6 py-3 transition-all"
@@ -158,6 +186,10 @@ export default function ContactSection() {
             &copy; 2026 Faishal Harits Al Fajri • Built with precision.
           </div>
           <div className="flex items-center space-x-6">
+            <a href={github} target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6] transition-colors flex items-center gap-1">
+              <GitHubIcon className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
             <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6] transition-colors flex items-center gap-1">
               <LinkedInIcon className="w-3.5 h-3.5" />
               <span>LinkedIn</span>

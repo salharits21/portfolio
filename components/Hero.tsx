@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight, MapPin, Sparkles, Code2, Terminal } from "lucide-react";
+import GitHubIcon from "@/components/GitHubIcon";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Hero() {
@@ -62,6 +63,17 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 glass-panel hover:bg-white/10 text-white font-sans font-semibold text-sm sm:text-base rounded-xl px-7 py-3.5 transition-all"
               >
                 <span>Get in Touch</span>
+              </a>
+
+              <a
+                href="https://github.com/salharits21"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="inline-flex items-center gap-2 glass-panel hover:bg-white/10 text-white font-sans font-semibold text-sm sm:text-base rounded-xl px-5 py-3.5 transition-all"
+              >
+                <GitHubIcon className="w-5 h-5" />
+                <span>GitHub</span>
               </a>
             </div>
 
